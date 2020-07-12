@@ -18,11 +18,6 @@ const list = {
       status: 'TODO',
     },
     {
-      id: 3,
-      text: 'Make kanban app',
-      status: 'TODO',
-    },
-    {
       id: 4,
       text: 'Make kanban app',
       status: 'IN_PROGRESS',
@@ -58,9 +53,11 @@ const onDrop = (itemId, newStatus) => {
   setData(newData)
 }
 
+const listClass = `w-1/${data.statuses.length} h-screen border-solid border-gray-300 border-2`
+
 return (
-<div>{data.statuses.map(status => 
-  (<TaskList onDroppedItem={onDrop} listname = {status} tasks = {getTasks(status)} key={status}/>)
+<div className="flex mb-1">{data.statuses.map(status => 
+  (<TaskList styleClass={listClass} onDroppedItem={onDrop} listname = {status} tasks = {getTasks(status)} key={status}/>)
   )}
   </div>); 
 }

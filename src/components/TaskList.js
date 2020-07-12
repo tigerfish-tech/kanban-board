@@ -13,8 +13,8 @@ export default function TaskList(props) {
     }
 
     return (
-    <div onDragOver={dragOver} onDrop={drop}>
-        <h3>{props.listname}</h3>
+    <div className={props.styleClass} onDragOver={dragOver} onDrop={drop}>
+        <h3 className="text-center">{props.listname}</h3>
         {props.tasks}
     </div>);
 }
